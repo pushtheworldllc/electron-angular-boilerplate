@@ -1,5 +1,5 @@
 APP_NAME=app
-ELECTRON_VERSION=1.1.2
+ELECTRON_VERSION=0.28.3
 OUTPUT_DIR=build
 
 apps: windows windows-64 linux linux-64 mac-64

@@ -1,8 +1,8 @@
 APP_NAME=app
-ELECTRON_VERSION=0.28.3
+ELECTRON_VERSION=1.1.2
 OUTPUT_DIR=build
 
-apps: windows windows-64 mac-64 linux linux-64
+apps: windows windows-64 linux linux-64 mac-64
 
 clean-apps:
 	rm -rf $OUTPUT_DIR && mkdir $OUTPUT_DIR

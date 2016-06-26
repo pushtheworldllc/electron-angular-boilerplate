@@ -3,7 +3,7 @@
   "version": "1.5.0",
   "description": "A basic electron app using AngularJS and Skeleton CSS with ES6 support",
   "engines": {
-    "node": "4.2.x"
+    "node": ">= 4.x"
   },
   "main": "main.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "babel-jest": "6.0.1",
     "bower": "1.7.2",
     "del": "2.2.0",
-    "electron-packager": "5.2.1",
+    "electron-packager": "^7.1.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-clean": "^0.3.1",

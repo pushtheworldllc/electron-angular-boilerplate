@@ -1,17 +1,21 @@
 'use strict';
 
+const electron = require('electron');
+// Module to control application life.
+const {app} = electron;
+// Module to create native browser window.
+const {BrowserWindow} = electron;
 var _ = require('lodash');
-var app = require('app');
 var path = require('path');
-var BrowserWindow = require('browser-window');
+
 
 // ####################################################
 // ####################################################
 
 // Report crashes to our server.
-require('crash-reporter').start();
+// require('crash-reporter').start();
 
-var mainWindow = null;
+let mainWindow = null;
 var options = {
 	"debug": true,
 	"version": "1.0.0",
@@ -27,15 +31,15 @@ options = _.extend({
 // ############################################################################################
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   if(process.platform !== 'darwin') { app.quit(); }
 });
 
-app.on('ready', function() {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({width: 800, height: 600});
-  mainWindow.loadUrl(path.join('file://', __dirname, options.views_dir, options.root_view));
+  mainWindow.loadURL(path.join('file://', __dirname, options.views_dir, options.root_view));
   if(options.debug) { mainWindow.openDevTools(); }
-  mainWindow.on('closed', function() { mainWindow = null; });
+  mainWindow.on('closed', () => { mainWindow = null; });
 });
 
 // ############################################################################################
